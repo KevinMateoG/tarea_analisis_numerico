@@ -29,13 +29,13 @@ def biseccion(f,a,b,tol=10**-2):
             contador += 1
             p = (a+b)/2
             if abs(f(p)) < tol:
-                print(p, contador)
-                return
+                #print(p, contador)
+                return p, contador
             if f(a)*f(p) < 0:
                 b = p
             else:
                 a = p
-        print(f"la solucion de la funcion: {p} {contador}")
+        #print(f"la solucion de la funcion: {p} {contador}")
     return p, contador
 
 def pos_falsa(f,a,b,error):
