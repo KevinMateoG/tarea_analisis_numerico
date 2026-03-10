@@ -2,8 +2,6 @@ import sympy as sp
 
 x=sp.symbols('x')
 
-import sympy as sp
-
 def Newton(f,x0,tol):
   df = sp.diff(f,x)
   newton = x-f/df
@@ -18,7 +16,6 @@ def Newton(f,x0,tol):
     if n == 20:
        break
   return float(x1), n
-
 
 def biseccion(f,a,b,tol=10**-2):
     contador = 0
@@ -55,3 +52,12 @@ def pos_falsa(f,a,b,error):
       else:
         a=p
     return p,count
+
+def secante(f, xo, x1, tol):
+    error = 1
+    while error > tol:
+        x2 = x1 - f(x1) * (x1 - xo) / (f(x1) - f(xo))
+        error = abs(x2 - x1)
+        xo = x1
+        x1 = x2
+    return x2
