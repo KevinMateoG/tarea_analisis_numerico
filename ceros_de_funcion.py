@@ -17,15 +17,6 @@ def Newton(f,x0,tol):
        break
   return float(x1), n
 
-def Secante(f,x0,x1,tol):
-    error = 1
-    while error > tol:
-        x2 = x1 -f(x1)*(x1-x0)/(f(x1)-f(x0))
-        error = abs(x2-x1)
-        x0 = x1
-        x1 = x2
-    return x2
-
 def biseccion(f,a,b,tol=10**-2):
     contador = 0
     if f(a)*f(b) > 0:
