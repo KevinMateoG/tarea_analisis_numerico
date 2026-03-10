@@ -14,7 +14,7 @@ def Newton(f,x0,tol):
     x1 = sp.lambdify(x,newton)(x0) #newton.subs(x,x0)
     error=abs(x1-x0)
     x0 = x1
-    print(x0)
+   # print(x0)
     if n == 20:
        break
   return float(x1), n
@@ -23,7 +23,7 @@ def Newton(f,x0,tol):
 def biseccion(f,a,b,tol=10**-2):
     contador = 0
     if f(a)*f(b) > 0:
-        print("caho no hay nada que ver")
+        print("chao no hay nada que ver")
     else:
         while abs(b-a)>tol:
             contador += 1
@@ -49,7 +49,7 @@ def pos_falsa(f,a,b,error):
       p = b - f(b) * (a-b)/(f(a)-f(b))
       if abs(f(p)) < error:
         break
-      print(f"este es para la iteracion {count}: {p}")
+      #print(f"este es para la iteracion {count}: {p}")
       if f(a)*f(p) < 0:
         b=p
       else:
